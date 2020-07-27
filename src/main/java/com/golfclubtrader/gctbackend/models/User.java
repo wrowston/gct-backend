@@ -1,19 +1,10 @@
 package com.golfclubtrader.gctbackend.models;
 
-public class User {
+public class User extends BaseEntity{
 
-    public Long id;
     public String firstName;
     public String lastName;
     public String userName;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;

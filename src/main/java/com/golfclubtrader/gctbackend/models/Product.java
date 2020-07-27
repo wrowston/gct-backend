@@ -1,20 +1,11 @@
 package com.golfclubtrader.gctbackend.models;
 
-public class Product {
+public class Product extends BaseEntity {
 
-    public Long id;
     public String name;
     public String description;
     public float price;
     public String photoUrl;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
