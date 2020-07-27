@@ -1,11 +1,16 @@
 package com.golfclubtrader.gctbackend.controllers;
 
+import com.golfclubtrader.gctbackend.models.Product;
 import com.golfclubtrader.gctbackend.services.ProductService;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import java.util.Set;
+
+@RestController
+@RequestMapping("/api/v1/product")
 public class ProductController {
 
     private final ProductService productService;
@@ -14,11 +19,19 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @RequestMapping({"/products"})
-    public String allProducts(Model model) {
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    public Set<Product> allProducts() {
 
-        model.addAttribute("products", productService.findAll());
+        Set<Product> products = productService.findAll();
 
-        return "products/index";
+        return products;
+    }
+
+    @RequestMapping(value = "/{productId}", method = RequestMethod.GET)
+    public Product findProductById(Long id) {
+
+        Product product = productService.findById(id);
+
+        return product;
     }
 }
