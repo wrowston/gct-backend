@@ -1,4 +1,6 @@
 package com.golfclubtrader.gctbackend.services;
 
-public interface UserService {
+import com.golfclubtrader.gctbackend.models.User;
+
+public interface UserService extends CrudService<User, Long> {
 }
