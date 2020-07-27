@@ -1,6 +1,6 @@
-package guru.springframework.wrpetclinic.services.map;
+package com.golfclubtrader.gctbackend.services.map;
 
-import guru.springframework.wrpetclinic.model.BaseEntity;
+import com.golfclubtrader.gctbackend.models.BaseEntity;
 
 import java.util.*;
 
