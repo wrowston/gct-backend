@@ -2,10 +2,10 @@ package com.golfclubtrader.gctbackend.dao;
 
 import com.golfclubtrader.gctbackend.models.User;
 
-import java.util.Set;
+import java.util.List;
 
 public interface UserDAO {
-    Set<User> findAll();
+    List<User> findAll();
 
     User findById(Long id);
 
