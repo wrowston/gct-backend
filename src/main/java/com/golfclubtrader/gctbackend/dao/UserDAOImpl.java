@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-import java.util.List;
+import java.util.Set;
 
 @Repository
 public class UserDAOImpl implements UserDAO {
@@ -19,25 +19,31 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public List<User> findAll() {
+    public Set<User> findAll() {
         Query theQuery= (Query) entityManager.createQuery("from User");
-        List<User> users = theQuery.getResultList();
+        Set<User> users = (Set<User>) theQuery.getResultList();
 
         return users;
     }
 
     @Override
     public User findById(Long id) {
-        return null;
+        User user = entityManager.find(User.class, id);
+
+        return user;
     }
 
     @Override
     public User save(User object) {
-        return null;
+        User user = entityManager.merge(object);
+        object.setId(user.getId());
+        return object;
     }
 
     @Override
     public void deleteById(Long id) {
-
+        Query theQuery = (Query) entityManager.createQuery("delete from User where id=:userId");
+        theQuery.setParameter("userId", id);
+        theQuery.executeUpdate();
     }
 }
