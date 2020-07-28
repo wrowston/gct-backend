@@ -20,12 +20,7 @@ public class ProductServiceMap extends AbstractMapService<Product, Long> impleme
     }
 
     @Override
-    public Product create() {
-        return null;
-    }
-
-    @Override
-    public Product update(Product product) {
+    public Product save(Product product) {
         return super.update(product);
     }
 

@@ -19,13 +19,9 @@ public class UserServiceMap extends AbstractMapService<User, Long> implements Us
         return super.findById(id);
     }
 
-    @Override
-    public User create() {
-        return null;
-    }
 
     @Override
-    public User update(User user) {
+    public User save(User user) {
         return super.update(user);
     }
 

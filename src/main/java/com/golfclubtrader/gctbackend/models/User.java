@@ -3,14 +3,21 @@ package com.golfclubtrader.gctbackend.models;
 import javax.persistence.*;
 
 @Entity
-//@Table(name = "users")
+@Table(name = "users")
 public class User extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "first_name")
     public String firstName;
+
+    @Column(name = "last_name")
     public String lastName;
+
+    @Column(name = "user_name")
     public String userName;
 
 
