@@ -3,7 +3,6 @@ package com.golfclubtrader.gctbackend.models;
 import javax.persistence.*;
 
 @Entity
-//@Table(name = "products")
 public class Product extends BaseEntity {
 
     @Id
